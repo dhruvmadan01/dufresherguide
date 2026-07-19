@@ -1,0 +1,55 @@
+const DU_COLLEGES = [
+  { name: "St. Stephen's College", campus: "North Campus" },
+  { name: "Shri Ram College of Commerce (SRCC)", campus: "North Campus" },
+  { name: "Hindu College", campus: "North Campus" },
+  { name: "Hansraj College", campus: "North Campus" },
+  { name: "Kirori Mal College", campus: "North Campus" },
+  { name: "Ramjas College", campus: "North Campus" },
+  { name: "Miranda House", campus: "North Campus" },
+  { name: "Daulat Ram College", campus: "North Campus" },
+  { name: "Sri Guru Tegh Bahadur Khalsa College", campus: "North Campus" },
+  { name: "Indraprastha College for Women", campus: "North Campus" },
+  { name: "Sri Venkateswara College (Venky)", campus: "South Campus" },
+  { name: "Lady Shri Ram College for Women (LSR)", campus: "South Campus" },
+  { name: "Gargi College", campus: "South Campus" },
+  { name: "Jesus and Mary College (JMC)", campus: "South Campus" },
+  { name: "Atma Ram Sanatan Dharma College (ARSD)", campus: "South Campus" },
+  { name: "Dyal Singh College", campus: "South Campus" },
+  { name: "Shaheed Bhagat Singh College", campus: "South Campus" },
+  { name: "Delhi College of Arts and Commerce (DCAC)", campus: "South Campus" },
+  { name: "College of Vocational Studies (CVS)", campus: "South Campus" },
+  { name: "Motilal Nehru College", campus: "South Campus" },
+  { name: "Aryabhatta College", campus: "South Campus" },
+  { name: "Maitreyi College", campus: "South Campus" },
+  { name: "Kamla Nehru College", campus: "South Campus" },
+  { name: "Shaheed Sukhdev College of Business Studies (SSCBS)", campus: "Off Campus" },
+  { name: "Deen Dayal Upadhyaya College", campus: "Off Campus" },
+  { name: "Keshav Mahavidyalaya", campus: "Off Campus" },
+  { name: "Maharaja Agrasen College", campus: "Off Campus" },
+  { name: "Ramanujan College", campus: "Off Campus" },
+  { name: "Sri Guru Gobind Singh College of Commerce (SGGSCC)", campus: "Off Campus" },
+  { name: "Acharya Narendra Dev College", campus: "Off Campus" },
+  { name: "Deshbandhu College", campus: "Off Campus" },
+  { name: "Zakir Husain Delhi College", campus: "Off Campus" },
+  { name: "PGDAV College", campus: "Off Campus" },
+  { name: "Rajdhani College", campus: "Off Campus" },
+  { name: "Satyawati College", campus: "Off Campus" },
+  { name: "Shivaji College", campus: "Off Campus" },
+  { name: "Sri Guru Nanak Dev Khalsa College", campus: "Off Campus" },
+  { name: "Shyama Prasad Mukherji College for Women", campus: "Off Campus" },
+  { name: "Bhaskaracharya College of Applied Sciences", campus: "Off Campus" },
+  { name: "Shaheed Rajguru College of Applied Sciences for Women", campus: "Off Campus" },
+  { name: "Swami Shraddhanand College", campus: "Off Campus" },
+  { name: "Bhagini Nivedita College", campus: "Off Campus" },
+  { name: "Aditi Mahavidyalaya", campus: "Off Campus" },
+  { name: "Bharati College", campus: "Off Campus" },
+  { name: "Lakshmibai College", campus: "Off Campus" },
+  { name: "Kalindi College", campus: "Off Campus" }
+];
+
+// Sort alphabetically by college name
+DU_COLLEGES.sort((a, b) => a.name.localeCompare(b.name));
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = DU_COLLEGES;
+}

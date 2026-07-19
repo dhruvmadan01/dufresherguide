@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DU Freshers Day 1 Survival Guide 2026</title>
+  <meta name="description" content="Unlock the ultimate Delhi University (DU) First Day Guide: physical document checklists, orientation hacks, NEP syllabus breakdowns, and the bunk calculator.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- 1. LANDING & REGISTRATION SCREEN -->
+    <div id="welcome-screen" class="screen welcome-screen active retro-card card-yellow">
+      <div class="badge-tag">Delhi University · 2026–27</div>
+      <h1>DU FRESHERS<br><span>FIRST DAY</span><br>GUIDE</h1>
+      <p style="color: var(--muted); font-size: 1.05rem; margin-bottom: 2rem;">
+        Get day-one ready! Unlock the official physical verification checklist, orientation survival hacks, NEP course selection guides, and the attendance calculator. Register below to unlock instant access.
+      </p>
+      
+      <div class="welcome-pills">
+        <span class="pill-tag pill-y">📋 Verification Checklist</span>
+        <span class="pill-tag pill-p">🎒 Day 1 Essentials</span>
+        <span class="pill-tag pill-g">🏫 Orientation Hacks</span>
+        <span class="pill-tag pill-b">📚 NEP Course Pickers</span>
+      </div>
+
+      <div class="divider-strip"></div>
+
+      <!-- Lead Capture Form -->
+      <form id="lead-form" class="form-container" novalidate style="text-align: left;">
+        
+        <!-- Name Input -->
+        <div class="field-group" id="group-name">
+          <label class="field-label" for="user-name">Full Name</label>
+          <input type="text" id="user-name" class="field-control" placeholder="Enter your full name" required>
+          <span class="error-text">Please enter a valid name (letters only).</span>
+        </div>
+
+        <!-- Phone Input -->
+        <div class="field-group" id="group-phone">
+          <label class="field-label" for="user-phone">WhatsApp Phone Number</label>
+          <input type="tel" id="user-phone" class="field-control" placeholder="10-digit mobile number" required>
+          <span class="error-text">Please enter a valid 10-digit Indian phone number.</span>
+        </div>
+
+        <!-- College Auto-Complete Input -->
+        <div class="field-group" id="group-college">
+          <label class="field-label" for="user-college">Allocated DU College</label>
+          <div style="position: relative;">
+            <input type="text" id="user-college" class="field-control" placeholder="Search and select your college..." autocomplete="off" required>
+            <div id="college-dropdown" class="search-dropdown">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+          <span class="error-text">Please select a valid college from the list.</span>
+        </div>
+
+        <!-- Gender Pills Input -->
+        <div class="field-group" id="group-gender" style="margin-bottom: 1.5rem;">
+          <label class="field-label">Gender</label>
+          <div class="gender-grid" id="gender-selector-container">
+            <div class="gender-box" data-value="Male">Male</div>
+            <div class="gender-box" data-value="Female">Female</div>
+            <div class="gender-box" data-value="Non-Binary">Non-Binary</div>
+            <div class="gender-box" data-value="Secret">Secret</div>
+          </div>
+          <input type="hidden" id="user-gender">
+          <span class="error-text" style="margin-top: 6px;">Please select your gender.</span>
+        </div>
+
+        <button type="submit" class="btn-retro" style="width: 100%; justify-content: center; margin-top: 1rem;">
+          Unlock Day 1 Survival Guide
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- 2. VIRAL LOCK SCREEN (SHARE GATING) -->
+    <div id="share-screen" class="screen share-screen retro-card card-pink" style="text-align: center;">
+      <div class="badge-tag" style="background: var(--metro-pink);">Viral verification active</div>
+      <h1 style="font-size: 2.5rem; line-height: 1.1; margin-bottom: 1rem;">📢 Almost Unlocked!</h1>
+      <p style="color: var(--muted); font-size: 1rem; margin-bottom: 2rem;">
+        You're just one step away. Share this survival guide link to <strong>3 CUET or Delhi University WhatsApp Groups</strong> to instantly unlock the checklists and tools.
+      </p>
+
+      <div class="share-tracker-box" style="background: #FFF8EE; border: var(--thick-border); padding: 1.5rem; margin-bottom: 2rem; border-radius: 0px; text-align: left;">
+        <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.75rem;">
+          <span>Shares Completed:</span>
+          <span id="share-count-text">0 / 3</span>
+        </div>
+        <div class="progress-track" style="background: #ffffff;">
+          <div id="share-progress-bar" class="progress-fill" style="width: 0%; background: var(--metro-pink);"></div>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.75rem; line-height: 1.3;">
+          ⚠️ <em>Instructions:</em> Click the button below, choose a group in WhatsApp, send the message, and return to this page. Repeat 3 times.
+        </p>
+      </div>
+
+      <button id="btn-whatsapp-share" class="btn-retro" style="width: 100%; justify-content: center; background: #25D366; color: #ffffff; border-color: #0E0C0A;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.385 5.39 0 12.007 0c3.202.001 6.212 1.249 8.477 3.518 2.264 2.269 3.51 5.283 3.509 8.487-.003 6.615-5.39 12-12.007 12-2.005-.002-3.974-.504-5.733-1.46L0 24zm6.29-3.73l.379.225c1.6.953 3.56 1.455 5.568 1.457 5.922 0 10.74-4.82 10.744-10.747.002-2.87-1.116-5.57-3.149-7.602C17.893 1.572 15.19 .45 12.32.449c-5.926 0-10.744 4.82-10.749 10.748-.001 2.012.528 3.984 1.53 5.71l.256.441-1.01 3.693 3.78-.99zM15.8 12.94c-.217-.11-1.29-.636-1.49-.71c-.197-.07-.34-.11-.49.11-.15.22-.58.736-.71.884-.13.148-.26.165-.477.056-.217-.11-.918-.339-1.748-1.077-.645-.575-1.08-1.287-1.206-1.506-.127-.218-.014-.336.095-.445.1-.099.217-.253.326-.38.109-.126.145-.213.217-.354.072-.143.036-.269-.018-.38-.054-.11-.49-1.185-.67-1.625-.177-.428-.356-.37-.49-.377-.127-.007-.272-.007-.418-.007s-.38.055-.58.272c-.2.217-.76.744-.76 1.815 0 1.07.78 2.103.89 2.253.11.15 1.534 2.342 3.716 3.282.519.224.924.358 1.24.46.52.165.993.142 1.368.086.418-.063 1.29-.527 1.472-1.035.182-.508.182-.943.127-1.035-.054-.09-.2-.143-.418-.253z"/></svg>
+        Share to WhatsApp Group
+      </button>
+
+      <button id="btn-unlock-guides" class="btn-retro btn-secondary" style="width: 100%; justify-content: center; margin-top: 1rem; display: none;">
+        Unlock Survival Guide Now!
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </button>
+    </div>
+
+    <!-- 3. FRESHERS SURVIVAL GUIDE DASHBOARD -->
+    <div id="results-screen" class="screen results-screen retro-card card-blue">
+      
+      <!-- Top Banner -->
+      <div class="persona-card" style="padding-bottom: 1.5rem; margin-bottom: 1.5rem;">
+        <div class="persona-avatar" style="background: var(--metro-yellow);">🎓</div>
+        <h2 class="persona-title">Day 1 Survival Guide</h2>
+        <div class="persona-tagline">Unlocked & Senior Approved ✅</div>
+        <p class="persona-body" style="font-size: 0.95rem;">
+          Welcome to Delhi University! Explore the tabs below to read honest, senior-approved guides on preparing your documents, orientation fests, and selecting NEP courses.
+        </p>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="tabs-menu">
+        <button class="tab-link active" data-tab="tab-checklist">📋 Checklist</button>
+        <button class="tab-link" data-tab="tab-essentials">🎒 Essentials</button>
+        <button class="tab-link" data-tab="tab-orientation">🏫 Orientation</button>
+        <button class="tab-link" data-tab="tab-nep">📚 NEP Courses</button>
+        <button class="tab-link" data-tab="tab-attendance">📊 Bunk Calc</button>
+      </div>
+
+      <!-- Tab Panels -->
+      
+      <!-- Tab 1: Physical Verification Checklist -->
+      <div id="tab-checklist" class="tab-content active">
+        <div class="society-badge-tip" style="margin-bottom: 1.5rem; border-color: var(--saffron);">
+          📋 <strong>First Day Verification Blueprint:</strong> You must bring all original certificates along with 2 self-attested photocopies of each. Check off items as you gather them!
+        </div>
+        
+        <ul class="checklist" style="list-style: none; display: flex; flex-direction: column; gap: 0.875rem;">
+          <li style="display: flex; gap: 0.75rem; align-items: center; background: #fff; border: var(--thick-border); padding: 0.875rem 1.25rem;">
+            <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--saffron);">
+            <span style="font-size: 0.95rem; font-weight: 500;">CSAS Allocation Form Printout (from CSAS Portal)</span>
+          </li>
+          <li style="display: flex; gap: 0.75rem; align-items: center; background: #fff; border: var(--thick-border); padding: 0.875rem 1.25rem;">
+            <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--saffron);">
+            <span style="font-size: 0.95rem; font-weight: 500;">Class X Marksheet & Certificate (Date of Birth Proof)</span>
+          </li>
+          <li style="display: flex; gap: 0.75rem; align-items: center; background: #fff; border: var(--thick-border); padding: 0.875rem 1.25rem;">
+            <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--saffron);">
+            <span style="font-size: 0.95rem; font-weight: 500;">Class XII Marksheet & Passing Certificate</span>
+          </li>
+          <li style="display: flex; gap: 0.75rem; align-items: center; background: #fff; border: var(--thick-border); padding: 0.875rem 1.25rem;">
+            <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--saffron);">
+            <span style="font-size: 0.95rem; font-weight: 500;">CUET Scorecard Printout & Admit Card</span>
+          </li>
+          <li style="display: flex; gap: 0.75rem; align-items: center; background: #fff; border: var(--thick-border); padding: 0.875rem 1.25rem;">
+            <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--saffron);">
+            <span style="font-size: 0.95rem; font-weight: 500;">Admission Fee Receipt Printout (Mandatory for college entry!)</span>
+          </li>
+          <li style="display: flex; gap: 0.75rem; align-items: center; background: #fff; border: var(--thick-border); padding: 0.875rem 1.25rem;">
+            <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--saffron);">
+            <span style="font-size: 0.95rem; font-weight: 500;">Character Certificate (Issued within the last 6 months)</span>
+          </li>
+          <li style="display: flex; gap: 0.75rem; align-items: center; background: #fff; border: var(--thick-border); padding: 0.875rem 1.25rem;">
+            <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--saffron);">
+            <span style="font-size: 0.95rem; font-weight: 500;">Category Certificate (SC/ST/OBC-NCL/EWS from current fiscal year)</span>
+          </li>
+          <li style="display: flex; gap: 0.75rem; align-items: center; background: #fff; border: var(--thick-border); padding: 0.875rem 1.25rem;">
+            <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--saffron);">
+            <span style="font-size: 0.95rem; font-weight: 500;">Migration Certificate (For non-CBSE / out-of-Delhi board students)</span>
+          </li>
+          <li style="display: flex; gap: 0.75rem; align-items: center; background: #fff; border: var(--thick-border); padding: 0.875rem 1.25rem;">
+            <input type="checkbox" style="width: 20px; height: 20px; cursor: pointer; accent-color: var(--saffron);">
+            <span style="font-size: 0.95rem; font-weight: 500;">4–6 Passport Size Photos (Keep ready for library / bus card registration)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tab 2: First Day Essentials -->
+      <div id="tab-essentials" class="tab-content">
+        <div class="retro-spots-container">
+          
+          <div class="spot-retro-card">
+            <div class="spot-retro-icon">📄</div>
+            <div class="spot-retro-body">
+              <span class="spot-retro-tag" style="background: var(--red);">Essential</span>
+              <h4>Admission Fee Receipt Printout</h4>
+              <p>Since your official college ID card will take weeks to be issued, college guards will only permit entry if you display your printed fee receipt. Keep it in your bag!</p>
+            </div>
+          </div>
+
+          <div class="spot-retro-card">
+            <div class="spot-retro-icon">📓</div>
+            <div class="spot-retro-body">
+              <span class="spot-retro-tag" style="background: var(--metro-blue);">Stationary</span>
+              <h4>Notebook & Pen</h4>
+              <p>Professors will write down syllabus layouts, list out recommended books, and detail the options for GE, SEC, and VAC papers in the first week. Take notes!</p>
+            </div>
+          </div>
+
+          <div class="spot-retro-card">
+            <div class="spot-retro-icon">💧</div>
+            <div class="spot-retro-body">
+              <span class="spot-retro-tag" style="background: var(--metro-green);">Survival</span>
+              <h4>Water Bottle & Umbrella</h4>
+              <p>Delhi's admission and semester starting weather (July–August) is notoriously humid and rainy. Stay hydrated and carry a compact umbrella.</p>
+            </div>
+          </div>
+
+          <div class="spot-retro-card">
+            <div class="spot-retro-icon">👕</div>
+            <div class="spot-retro-body">
+              <span class="spot-retro-tag" style="background: var(--saffron);">Tips</span>
+              <h4>Comfortable Clothing</h4>
+              <p>You will be walking around departments, library blocks, and registration desks. Wear comfortable sneakers and light clothes.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tab 3: Orientation Hacks -->
+      <div id="tab-orientation" class="tab-content">
+        <div class="retro-spots-container">
+          
+          <div class="spot-retro-card">
+            <div class="spot-retro-icon">🏫</div>
+            <div class="spot-retro-body">
+              <span class="spot-retro-tag" style="background: var(--saffron);">Orientation Hall</span>
+              <h4>Auditorium & Principal's Welcome</h4>
+              <p>The Principal will address the freshers, introduce key teachers, and lay out general rules. Attendance isn't strictly graded, but attending is highly recommended to feel welcomed.</p>
+            </div>
+          </div>
+
+          <div class="spot-retro-card">
+            <div class="spot-retro-icon">🎭</div>
+            <div class="spot-retro-body">
+              <span class="spot-retro-tag" style="background: var(--metro-pink);">Society Expo</span>
+              <h4>Audition registrations</h4>
+              <p>Foyers and lawns will be lined with society tables (Dramatics, Music, Debate, Placement, Enactus). Ask questions, register for audition groups, and network early!</p>
+            </div>
+          </div>
+
+          <div class="spot-retro-card">
+            <div class="spot-retro-icon">🤝</div>
+            <div class="spot-retro-body">
+              <span class="spot-retro-tag" style="background: var(--metro-blue);">Mentorship</span>
+              <h4>Department Tours</h4>
+              <p>Seniors and teachers will guide you through lecture blocks, canteen hubs, and lab setups. Meet your classmates and save your class coordinator's number.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tab 4: NEP Course Selection System -->
+      <div id="tab-nep" class="tab-content">
+        <div class="society-badge-tip" style="margin-bottom: 1.5rem; border-color: var(--metro-green);">
+          💡 <strong>DU NEP UGCF Syllabus System:</strong> 
+          Under the Undergraduate Curriculum Framework, you study more than just your main subject. Learn your subject categories:
+        </div>
+
+        <div class="retro-spots-container">
+          
+          <div class="spot-retro-card">
+            <div class="spot-retro-icon">📚</div>
+            <div class="spot-retro-body">
+              <span class="spot-retro-tag" style="background: var(--dark); color: #fff;">DSC (Core Courses)</span>
+              <h4>Discipline Specific Core</h4>
+              <p>These are your main subjects (e.g. History Hons, Physics Hons). You cannot change them and they form the base of your degree grades.</p>
+            </div>
+          </div>
+
+          <div class="spot-retro-card">
+            <div class="spot-retro-icon">🌱</div>
+            <div class="spot-retro-body">
+              <span class="spot-retro-tag" style="background: var(--metro-blue);">GE (Electives)</span>
+              <h4>Generic Electives</h4>
+              <p>Subjects you choose outside your department (e.g., studying Philosophy alongside Economics). Pick a GE that is scoring or lines up with future PG options.</p>
+            </div>
+          </div>
+
+          <div class="spot-retro-card">
+            <div class="spot-retro-icon">🛠️</div>
+            <div class="spot-retro-body">
+              <span class="spot-retro-tag" style="background: var(--metro-pink);">SEC (Skills)</span>
+              <h4>Skill Enhancement Course</h4>
+              <p>Practical classes (e.g., Creative Writing, Finance for Everyone, Python Programming). Pick a subject that adds weight to your placement CV!</p>
+            </div>
+          </div>
+
+          <div class="spot-retro-card">
+            <div class="spot-retro-icon">❤️</div>
+            <div class="spot-retro-body">
+              <span class="spot-retro-tag" style="background: var(--metro-green);">VAC (Values)</span>
+              <h4>Value Addition Course</h4>
+              <p>Ethics and civic studies classes (e.g., Constitutional Values, Fit India, Vedic Mathematics). Generally lighter workloads but mandatory credits.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tab 5: Attendance Calculator -->
+      <div id="tab-attendance" class="tab-content">
+        <div class="society-badge-tip" style="margin-bottom: 1.5rem; border-color: var(--saffron);">
+          📋 <strong>DU Attendance Score Weightage (Out of 5 Marks):</strong>
+          <br>• 85% and above = 5 Marks
+          <br>• 80% to 84.9% = 4 Marks
+          <br>• 75% to 79.9% = 3 Marks
+          <br>• 70% to 74.9% = 2 Marks
+          <br>• 67% to 69.9% = 1 Mark (Barely eligible for exams)
+        </div>
+        
+        <div class="calculator-box">
+          <div class="calculator-inputs" style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <div class="field-group">
+              <label class="field-label" for="calc-total">Total Classes Scheduled</label>
+              <input type="number" id="calc-total" class="field-control" value="60" min="1">
+            </div>
+            <div class="field-group">
+              <label class="field-label" for="calc-attended">Classes You Attended</label>
+              <input type="number" id="calc-attended" class="field-control" value="45" min="0">
+            </div>
+            <button id="btn-calculate" class="btn-retro btn-secondary" style="width: 100%; justify-content: center; font-size: 0.95rem; padding: 0.75rem 1rem;">
+              Calculate Safe Bunks
+            </button>
+          </div>
+          
+          <div class="calculator-result">
+            <div id="calc-pct-display" class="calc-value">75.0%</div>
+            <div id="calc-verdict-display" class="calc-status safe">You are Safe!</div>
+            <div id="calc-msg-display" class="calc-desc">You can bunk 6 more classes and still stay above the 67.67% requirement.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Colleges Data -->
+  <script src="colleges.js"></script>
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "du-freshers-guide",
+  "version": "1.0.0",
+  "description": "Gamified DU Freshers Guide & Lead Capture Platform",
+  "scripts": {
+    "dev": "npx -y http-server -p 3000"
+  }
+}
