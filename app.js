@@ -297,17 +297,17 @@ if (btnWhatsApp) {
     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, "_blank");
     
     sharesCompleted++;
-    if (sharesCompleted > 3) sharesCompleted = 3;
+    if (sharesCompleted > 1) sharesCompleted = 1;
     
     // Update tracker elements
     if (shareCountText) {
-      shareCountText.textContent = `${sharesCompleted} / 3`;
+      shareCountText.textContent = `${sharesCompleted} / 1`;
     }
     if (shareProgressBar) {
-      shareProgressBar.style.width = `${(sharesCompleted / 3) * 100}%`;
+      shareProgressBar.style.width = `${(sharesCompleted / 1) * 100}%`;
     }
     
-    if (sharesCompleted >= 3) {
+    if (sharesCompleted >= 1) {
       btnWhatsApp.style.display = "none";
       if (btnUnlock) {
         btnUnlock.style.display = "inline-flex";
