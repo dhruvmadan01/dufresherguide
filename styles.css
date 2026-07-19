@@ -500,35 +500,53 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Unlocked Navigation Tabs */
 .tabs-menu {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.4rem;
-  margin-bottom: 2.5rem;
-  background: var(--dark);
-  padding: 0.4rem;
-  border: var(--thick-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  background: transparent;
+  padding: 0;
+  border: none;
 }
 
 .tab-link {
-  background: transparent;
-  border: none;
-  padding: 0.75rem 0.25rem;
-  color: #fff;
+  flex: 1 1 auto;
+  min-width: 120px;
+  background: #ffffff;
+  border: var(--thick-border);
+  padding: 0.75rem 1.25rem;
+  color: var(--dark);
   font-family: var(--font-title);
-  font-size: 1.15rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
   text-transform: uppercase;
+  box-shadow: 3px 3px 0px var(--dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .tab-link:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--cream);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--dark);
+}
+
+.tab-link:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--dark);
 }
 
 .tab-link.active {
   background: var(--metro-yellow);
   color: var(--dark);
+  box-shadow: 1px 1px 0px var(--dark);
+  transform: translate(2px, 2px);
 }
 
 /* Tab Panels */
